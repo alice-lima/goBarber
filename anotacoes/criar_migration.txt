@@ -1,0 +1,8 @@
+yarn sequelize migration:create --name=create-users
+
+yarn sequelize db:migrate
+
+para desfazer:
+  yarn sequelize db:migrate:undo
+  ou
+   yarn sequelize db:migrate:undo:all
