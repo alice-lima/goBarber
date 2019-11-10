@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 
-import User from '../app/models/user';
+import User from '../app/models/User';
 import DatabaseConfig from '../config/database';
 
 const models = [User];
