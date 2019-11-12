@@ -1,0 +1,21 @@
+yarn add sucrase nodemon -D
+
+colocar no package.json:
+"scripts": {
+    "dev": "nodemon src/server.js",
+    "dev:debug": "nodemon --inspect src/server.js"
+
+  },
+
+criar arquivo nodemon.json na raiz do projeto, com o conteudo:
+{
+  "execMap": {
+    "js": "sucrase-node"
+  }
+}
+
+criar debug configuraion pelo VScode
+alterar os seguintes campos:
+  -  excluir "program"
+  - "request": "attach",
+  - "protocol": "inspector",
