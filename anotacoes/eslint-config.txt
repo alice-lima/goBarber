@@ -2,5 +2,8 @@ yarn add eslint -D
 yarn eslint --init
 yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
 
+configurar o eslint.rc
+
 fix automatico em todos os arquivos:
 yarn eslint --fix src --ext .js
+
