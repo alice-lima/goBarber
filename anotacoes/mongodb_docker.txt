@@ -1,0 +1,5 @@
+Instalar o mongodb com docker:
+
+docker pull mongo
+
+docker run --name mongodb -d mongo:tag -p 27017:27017
