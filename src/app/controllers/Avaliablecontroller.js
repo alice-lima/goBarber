@@ -10,7 +10,7 @@ import {
 import { Op } from 'sequelize';
 import Appointment from '../models/Appointment';
 
-class AvaliableController {
+class AvailableController {
   async index(req, res) {
     const { date } = req.query;
     if (!date) {
@@ -44,7 +44,7 @@ class AvaliableController {
       '19:00',
     ];
 
-    const avaliable = schedule.map(time => {
+    const available = schedule.map(time => {
       const [hour, minute] = time.split(':');
       const value = setSeconds(
         setMinutes(setHours(searchDate, hour), minute),
@@ -54,14 +54,14 @@ class AvaliableController {
       return {
         time,
         value: format(value, "yyyy-MM-dd'T'HH:mm:ssxxx"),
-        avaliable:
+        available:
           isAfter(value, new Date()) &&
           !appointments.find(a => format(a.date, 'HH:mm') === time),
       };
     });
 
-    return res.json(avaliable);
+    return res.json(available);
   }
 }
 
-export default new AvaliableController();
+export default new AvailableController();
